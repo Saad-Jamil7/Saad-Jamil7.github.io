@@ -59,7 +59,10 @@ Rule 2: If the application is 'blocks' use the L7-METHOD.
 <hr>
 
 <h2>Keystroke-Level Model (KLM)</h2>
-<p>The Keystroke-Level Model (KLM) is a simplified version of GOMS focused on predicting execution time for routine tasks.</p>
+<p>The Keystroke-Level Model (KLM) is a simplified version of GOMS focused on predicting execution time for routine tasks.
+    It breaks down tasks into primitive operators with estimated times: keystroking (K: ~0.2 sec), pointing (P: ~1.1 sec), homing (H: ~0.4 sec), mental preparation (M: ~1.35 sec), and system response (R).
+    KLM assumes expert, error-free performance and is useful for comparing different interface designs by calculating total execution time as the sum of all operator times.
+</p>
 <p>KLM breaks down tasks into primitive operators with estimated times:</p>
 <ul>
     <li>Keystroking (K): ~0.2 sec</li>
@@ -69,6 +72,7 @@ Rule 2: If the application is 'blocks' use the L7-METHOD.
     <li>Response time (R): system-dependent</li>
 </ul>
 <p>Total time = Sum of all operator times</p>
+    <p><em>*Reference: Dix et al., p. 436-439*</em> </p>
 
 <hr>
 
