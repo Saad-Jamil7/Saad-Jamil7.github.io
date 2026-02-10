@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CS-555 HCI - Cognitive Models</title>
+</head>
+<body>
+
+<h1>Cognitive Models: GOMS & KLM</h1>
+<p>This page covers cognitive modeling frameworks for analyzing user interactions, based on Dix et al., <em>Human–Computer Interaction</em>.</p>
+
+<ul>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="models.html">Interaction Models</a></li>
+    <li><a href="cognitive.html" aria-current="page">Cognitive Models</a></li>
+    <li><a href="lab.html">Lab Practice</a></li>
+</ul>
+
+<hr>
+
+<h2 id="cognitive">The GOMS Model (Chapter 12.2)</h2>
+<p>The GOMS model of Card, Moran and Newell is an acronym for <strong>Goals, Operators, Methods and Selection</strong>. A GOMS description consists of these four elements for analyzing user tasks.</p>
+<p><em>Reference: Dix et al., p. 422-424</em></p>
+
+<hr>
+
+<h3>GOMS Components</h3>
+<p><strong>Goals:</strong> The user’s goals, describing what the user wants to achieve. In GOMS, goals represent a 'memory point' for the user.</p>
+<p><strong>Operators:</strong> The lowest level of analysis. Basic actions that the user must perform in order to use the system.</p>
+<p><strong>Methods:</strong> Different ways in which a goal can be split into subgoals. For example, closing a window via menu vs. function key.</p>
+<p><strong>Selection:</strong> Rules that predict which methods will be used, depending on the user and system state.</p>
+
+<p>Example GOMS structure:</p>
+<pre>
+GOAL: ICONIZE-WINDOW
+. [select GOAL: USE-CLOSE-METHOD
+. . MOVE-MOUSE-TO-WINDOW-HEADER
+. . POP-UP-MENU
+. . CLICK-OVER-CLOSE-OPTION
+GOAL: USE-L7-METHOD
+. . PRESS-L7-KEY]
+</pre>
+
+<p>Selection rules example:</p>
+<pre>
+User Sam:
+Rule 1: Use the CLOSE-METHOD unless another rule applies.
+Rule 2: If the application is 'blocks' use the L7-METHOD.
+</pre>
+
+<hr>
+
+<h3>GOMS Analysis & Performance</h3>
+<p>The original GOMS model was good for describing how experts perform routine tasks. Coupled with physical device models, it can be used to predict user performance in terms of execution times.</p>
+<p>In early experiments, GOMS achieved about 90% correct prediction of user commands and predicted execution times with an error of 33%.</p>
+<p>Analysis of GOMS goal structure can yield measures of performance. The stacking depth can estimate short-term memory requirements.</p>
+<p><em>Reference: Dix et al., p. 423-424</em></p>
+
+<hr>
+
+<h2>Keystroke-Level Model (KLM)</h2>
+<p>The Keystroke-Level Model (KLM) is a simplified version of GOMS focused on predicting execution time for routine tasks.</p>
+<p>KLM breaks down tasks into primitive operators with estimated times:</p>
+<ul>
+    <li>Keystroking (K): ~0.2 sec</li>
+    <li>Pointing (P): ~1.1 sec</li>
+    <li>Homing (H): ~0.4 sec</li>
+    <li>Mental preparation (M): ~1.35 sec</li>
+    <li>Response time (R): system-dependent</li>
+</ul>
+<p>Total time = Sum of all operator times</p>
+
+<hr>
+
+<h2>Comparison: GOMS vs. KLM</h2>
+<table border="1">
+    <tr>
+        <th>Aspect</th>
+        <th>GOMS</th>
+        <th>KLM</th>
+    </tr>
+    <tr>
+        <td><strong>Full Name</strong></td>
+        <td>Goals, Operators, Methods, Selection</td>
+        <td>Keystroke-Level Model</td>
+    </tr>
+    <tr>
+        <td><strong>Complexity</strong></td>
+        <td>More complex, detailed analysis</td>
+        <td>Simplified, focused on time prediction</td>
+    </tr>
+    <tr>
+        <td><strong>Focus</strong></td>
+        <td>Task structure, user knowledge, goal hierarchy</td>
+        <td>Execution time, physical/motor operations</td>
+    </tr>
+    <tr>
+        <td><strong>Best For</strong></td>
+        <td>Understanding how experts perform routine tasks</td>
+        <td>Predicting time for error-free task completion</td>
+    </tr>
+    <tr>
+        <td><strong>Output</strong></td>
+        <td>Goal hierarchies, selection rules, memory requirements</td>
+        <td>Total execution time estimate</td>
+    </tr>
+    <tr>
+        <td><strong>Granularity</strong></td>
+        <td>Can be high-level (goals) or low-level (operators)</td>
+        <td>Primitive operators only (K, P, H, M, R)</td>
+    </tr>
+    <tr>
+        <td><strong>Relation</strong></td>
+        <td>Original comprehensive model</td>
+        <td>Simplified version of GOMS</td>
+    </tr>
+</table>
+
+<p><strong>Key Difference:</strong> GOMS provides a comprehensive analysis of user knowledge and task structure, while KLM focuses specifically on predicting execution time using standardized operator times.</p>
+
+<hr>
+
+<h2>Book Reference</h2>
+<p>Dix, A., Finlay, J., Abowd, G. D., & Beale, R. (2004). <em>Human–Computer Interaction</em> (3rd ed.). Pearson / Prentice Hall.</p>
+<p>© CS-555 HCI – Week 05 Submission | Saad Jamil</p>
+
+</body>
+</html>
